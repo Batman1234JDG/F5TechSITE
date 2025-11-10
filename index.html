@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F5 Tech | Local Tech Experts</title>
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+  <!-- ===== Navigation Bar ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">F5 TECH FREELANCE</div>
+      <ul class="nav-links">
+        <li><a href="#hero"><b>Home</b></a></li>
+        <li><a href="#about"><b>About</b></a></li>
+        <li><a href="#services"><b>Services</b></a></li>
+        <li><a href="#contact"><b>Contact</b></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="hero" class="hero full-section">
+    <div class="overlay">
+      <div class="hero-content">
+        <h1>“Freelance Tech Done Right”</h1>
+        <p>“Here at F5 Tech we Exist Basically because <b>YOU Deserve the BEST</b>. And we are dedicated to solve your IT needs.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="about full-section">
+    <h2>About Us</h2>
+  <p>
+    F5 Tech is a local freelance technology company dedicated to providing top-quality 
+    IT support, network services, and web solutions. What began as a small dorm-room 
+    side hustle has grown into a passionate freelance team with real-world experience 
+    and a drive to make technology accessible to everyone.
+  </p>
+  <p>
+    We’re here to solve everyday tech issues, offer free advice, and ensure our clients 
+    stay connected and confident in the digital world. Our vision is simple yet powerful — 
+    to narrow the digital divide in Papua New Guinea, one client at a time.
+  </p>
+  </section>
+
+  <!-- ===== Services Section ===== -->
+  <section id="services" class="services full-section">
+    <h2>Our Services</h2>
+    <div class="service-carousel">
+      <div class="service-box active">PC / Laptop Repair</div>
+      <div class="service-box">Web Development</div>
+      <div class="service-box">Office Installation</div>
+      <div class="service-box">Network (Cabling, Setup, Troubleshoot)</div>
+      <div class="service-box">Printer Setup / Troubleshoot</div>
+      <div class="service-box">Free Tech Advice</div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section (Updated) ===== -->
+<!-- ===== Contact Section (Centered Form Only) ===== -->
+<section id="contact" class="contact full-section">
+  <div class="contact-overlay">
+    <div class="contact-container single">
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/mzzypjgq" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <class="footer-content">
+      <p>&copy; <b>2025 F5 Tech.</b></p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FontAwesome for Icons ===== -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- ===== Embedded JavaScript ===== -->
+  <script>
+    // ===== HERO BACKGROUND SLIDES =====
+    const hero = document.querySelector('.hero');
+    const heroImages = [
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "https://images.unsplash.com/photo-1517433456452-f9633a875f6f"
+    ];
+    let heroIndex = 0;
+
+    function changeHeroBg() {
+      hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
+      heroIndex = (heroIndex + 1) % heroImages.length;
+    }
+
+    changeHeroBg();
+    setInterval(changeHeroBg, 2000);
+
+    // ===== ROTATING SERVICES =====
+    const boxes = document.querySelectorAll('.service-box');
+    let currentBox = 0;
+
+    function rotateServices() {
+      boxes[currentBox].classList.remove('active');
+      currentBox = (currentBox + 1) % boxes.length;
+      boxes[currentBox].classList.add('active');
+    }
+
+    setInterval(rotateServices, 2000);
+  </script>
+</body>
+</html>
